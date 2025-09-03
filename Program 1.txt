@@ -1,0 +1,67 @@
+package employee;
+
+public class employee {
+	String name;
+	int id;
+	double salary;
+    employee(String name,int id,double salary)
+     {
+    this.name=name;p
+    this.id=id;
+    this.salary=salary;
+     }
+//display details
+void displayDetails()
+{
+      System.out.println("name of the employee:"+name);
+      System.out.println("id of the employee:"+id);
+      System.out.println("Salary of the employee:"+salary);
+      System.out.println(" employee details are:"+name);
+}
+ 
+// Step 5: Method to increase salary
+      void increasesalary(double per) 
+      {
+          double increment = (salary *per/100);
+         salary = salary+ increment;
+          System.out.println(name + "s salary increased by " +10 + "%");
+}       
+      }
+ package employee;
+
+public class Main {
+	public static void main(String[] args) {
+		  employee e1=new employee("asha",1001,10000);
+		    employee e2=new employee("ashika",1002,12000);	
+		    System.out.println("initial employee details");
+		    //display details
+		    e1.displayDetails();
+		    e2.displayDetails();
+		    //increase salary
+		    e1.increasesalary(15.0d);
+		    e2.increasesalary(20.0d);
+		    System.out.println("updates details");
+		    e1.displayDetails();
+		    e2.displayDetails();
+} 
+}
+output:
+initial employee details
+name of the employee:asha
+id of the employee:1001
+Salary of the employee:10000.0
+ employee details are:asha
+name of the employee:ashika
+id of the employee:1002
+Salary of the employee:12000.0
+ employee details are:ashika
+asha's salary increased by 10%
+ashika's salary increased by 10%
+updates details
+name of the employee:asha
+id of the employee:1001
+Salary of the employee:11500.0
+ employee details are:asha
+name of the employee:ashika
+id of the employee:1002
+Salary of the employee:14400.0
