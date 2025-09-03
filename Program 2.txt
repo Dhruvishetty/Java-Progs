@@ -1,0 +1,108 @@
+package program2:
+public  class Car {
+
+
+//instance members
+ private String brd;  // brand
+ private String mdl;// model
+ private double prc; // price
+ private double  mil;  // mileage
+ private String  on; // ownerName
+
+// static member
+private static int   totalcars;       // totalCars
+private static String showroomName = "town showroom";
+// constructor 1
+   public Car(String brd, String mdl, double prc, double mil) {
+    this.brd="toyota"; // initialize brand
+    this.mdl="suv"; // initialize model
+    this.prc=2000000.d; // initialize price
+    this.mil=27.d ; // initialize mileage
+    this.on= "Not Assigned";
+    totalcars++;
+}
+// constructor 2 (overloaded)
+public Car(String brd, String mdl, double prc, double mil, String on) {
+	this.brd="toyota";
+    this.mdl="suv";
+    this.prc=2000000.d;
+    this.mil=27.d ;
+    this.on= "owner";
+    totalcars++;
+}
+// getter & setter for ownerName
+public String getOwnerName(){
+    return on;
+}
+
+public void setOwnerName(String owner) {
+    this.on= "owner";
+}
+
+// instance method
+public void displayDetails() {
+    System.out.println("Brand: " + brd);
+    System.out.println("Model: " +mdl);
+    System.out.println("Price: " + prc);
+    System.out.println("Mileage: " +mil);
+    System.out.println("Owner: " + on);
+}
+public void updatePrice(double newPrice) {
+   prc = newPrice;
+}
+
+// static methods
+public static void showTotalCars() {
+    System.out.println("Total Cars: " + totalcars);
+}
+
+public static void showShowroomName() {
+    System.out.println("Showroom: " + showroomName);
+}
+}
+package program2;
+
+public class Showroom {
+
+    public static void main(String[] args) {
+        Car c1 = new Car("Toyota", "Corolla", 15000, 18.5);
+        Car c2 = new Car("Honda", "Civic", 20000, 16.0, "John");
+        Car c3 = new Car("Hyundai", "i20", 12000, 20.0);
+
+        c1.displayDetails();
+        c2.displayDetails();
+        c3.displayDetails();
+
+        c1.setOwnerName("jashith");  // using setter
+        c1.updatePrice(12000);
+
+        System.out.println("After Updating:");
+        c1.displayDetails();
+
+        Car.showShowroomName();
+        Car.showTotalCars();
+    }
+  }
+  output:Brand: toyota
+Model: suv
+Price: 2000000.0
+Mileage: 27.0
+Owner: Not Assigned
+Brand: toyota
+Model: suv
+Price: 2000000.0
+Mileage: 27.0
+Owner: owner
+Brand: toyota
+Model: suv
+Price: 2000000.0
+Mileage: 27.0
+Owner: Not Assigned
+After Updating:
+Brand: toyota
+Model: suv
+Price: 12000.0
+Mileage: 27.0
+Owner: owner
+Showroom: town showroom
+Total Cars: 3
